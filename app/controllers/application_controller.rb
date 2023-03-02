@@ -7,13 +7,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/tasks' do
-    tasks = tasks.all
+    tasks = Task.all
     tasks.to_json
   end
 
 
   get '/tasks/:id' do
-    task = tasks.find(params[:id])
+    task = Task.find(params[:id])
     task.to_json
   end
 
